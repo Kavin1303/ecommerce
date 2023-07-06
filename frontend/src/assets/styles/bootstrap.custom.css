@@ -427,7 +427,14 @@ kbd kbd {
   padding: 0;
   font-size: 1em;
 }
-
+.navbar{
+  background-color: rgb(2, 45, 91);
+  color: #1f5b83;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .navabr-text {
+  color : olive;
+}
 figure {
   margin: 0 0 1rem;
 }
@@ -4066,7 +4073,15 @@ fieldset:disabled .btn {
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
-  color: var(--bs-navbar-brand-hover-color);
+  color: oldlace;
+}
+.navbar-brand,
+.nav-link {
+  color: grey;
+}
+.nav-link:hover,
+.nav-link:focus{
+  color :oldlace;
 }
 
 .navbar-nav {

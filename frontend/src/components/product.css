@@ -1,0 +1,6 @@
+.grid:hover{
+    -webkit-transform: scale(1.2);
+	transform: scale(1.2);
+	z-index: 5000;
+    /* background-position: 100% 100%; */
+}
