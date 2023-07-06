@@ -5,18 +5,27 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FaShoppingCart,FaUser,FaStore } from 'react-icons/fa';
 import logo from '../assets/logo.png';
+import {LinkContainer} from 'react-router-bootstrap';
+
+
 const Header = () => {
   return (
     <header>
         <Navbar  expand = "md" collapseOnSelect>
             <Container>
-                <Navbar.Brand href = "/">
+              <LinkContainer to='/'>
+                <Navbar.Brand>
                   <FaStore /> ECOM</Navbar.Brand>
+                  </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link href ="/Cart"><FaShoppingCart  /> Cart</Nav.Link>
-                            <Nav.Link href = "/login"><FaUser /> Sign in</Nav.Link>
+                          <LinkContainer to ="/Cart">
+                            <Nav.Link><FaShoppingCart  /> Cart</Nav.Link>
+                          </LinkContainer>
+                          <LinkContainer to ="/login">
+                            <Nav.Link><FaUser /> Sign in</Nav.Link>
+                          </LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
             </Container>
