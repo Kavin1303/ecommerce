@@ -13,7 +13,7 @@ const Header = () => {
     <header>
         <Navbar  expand = "md" collapseOnSelect>
             <Container>
-              <LinkContainer to='/'>
+              <LinkContainer to="/">
                 <Navbar.Brand>
                   <FaStore /> ECOM</Navbar.Brand>
                   </LinkContainer>

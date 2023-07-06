@@ -1,0 +1,31 @@
+.back{
+    float: right;
+    color: black;
+}
+.back:hover{
+    background-color: rgb(2, 45, 91);
+    color: white;
+    -webkit-transform: scale(1.2);
+	transform: scale(1.2);
+    transition: color 0.5s, background-color 0.5s;
+}
+.addtocart:disabled{
+    color:grey;
+    background-color: white;
+}
+.addtocart:hover{
+    background-color: rgb(2, 45, 91);
+    color: white;
+    -webkit-transform: scale(1.2);
+	transform: scale(1.2);
+    transition: color 0.5s, background-color 0.5s;
+}
+.zoom{
+    height: 300px;
+    overflow: hidden;
+}
+.zoom:hover{
+    transform: scale(1.2);
+    transition: transform 0.25s ease;
+    cursor: zoom-in;
+}
