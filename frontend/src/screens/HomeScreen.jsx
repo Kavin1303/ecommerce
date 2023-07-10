@@ -1,9 +1,10 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import {Row, Col} from 'react-bootstrap';
 import Product from '../components/Product' ;
 import './HomeScreen.css';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+
 
 const HomeScreen = () => {
   const [products,setProducts] = useState([]);
