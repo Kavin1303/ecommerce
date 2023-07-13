@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 dotenv.config();
 import productRoutes from './router/productRoutes.js';
+import userRoutes from './router/userRoutes.js';
 import connectDB from './config/db.js';
 import { notfound,errorHandler } from './middleware/errorMiddleware.js';
 
@@ -10,12 +11,14 @@ import { notfound,errorHandler } from './middleware/errorMiddleware.js';
 const port = process.env.PORT;
 connectDB();
 const app = express();
-
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 app.get('/',(req,res)=>{
     res.send('api is running');
 });
 app.use('/api/products',productRoutes);
+app.use('/api/user',userRoutes)
 app.use(notfound);
 app.use(errorHandler);
 
