@@ -4098,7 +4098,7 @@ fieldset:disabled .btn {
   list-style: none;
 }
 .navbar-nav .show > .nav-link,
-.navbar-nav .nav-link.active {
+.navbar-nav  {
   color: var(--bs-navbar-active-color);
 }
 .navbar-nav .dropdown-menu {
