@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import productRoutes from './router/productRoutes.js';
 import userRoutes from './router/userRoutes.js';
+import orderRoutes from './router/orderRoutes.js';
 import connectDB from './config/db.js';
 import cookieParser from 'cookie-parser';
 import { notfound,errorHandler } from './middleware/errorMiddleware.js';
@@ -18,9 +19,13 @@ app.use(cookieParser());
 app.get('/',(req,res)=>{
     res.send('api is running');
 });
+app.get('/api/config/paypal',(req,res) => res.send({
+    clientId:true
+}));
 
 app.use('/api/products',productRoutes);
-app.use('/api/user',userRoutes)
+app.use('/api/user',userRoutes);
+app.use('/api/orders',orderRoutes);
 app.use(notfound);
 app.use(errorHandler);
 
