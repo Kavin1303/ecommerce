@@ -99,6 +99,7 @@ const OrderScreen = () => {
   const deliverHandler = async () => {
     await deliverOrder(orderId);
     refetch();
+    toast.success('Order is delivered')
   };
 
   return isLoading ? (
@@ -243,7 +244,6 @@ const OrderScreen = () => {
 
               {userInfo &&
                 userInfo.isAdmin &&
-                order.isPaid &&
                 !order.isDelivered && (
                   <ListGroup.Item>
                     <Button
