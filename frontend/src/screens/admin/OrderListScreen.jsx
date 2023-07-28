@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState,useEffect } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import {Table,Button } from 'react-bootstrap';
 import { FaTimes } from 'react-icons/fa';
@@ -10,7 +11,23 @@ import { useGetOrdersQuery } from '../../slices/orderApiSlice';
 
 const OrderListScreen = () => {
   const {data: orders, isLoading,error} = useGetOrdersQuery();
-  console.log(orders);
+  const [pending,setPending]= useState([]);
+  useEffect(() => {
+    if (!isLoading && !error && orders) {
+      const pendingOrders = orders.filter((order) => !order.isDelivered);
+      setPending(pendingOrders);
+    }
+  }, [isLoading, error, orders]);
+  const [delivered,setDelivered] = useState([]);
+  useEffect(()=>{
+    if(!isLoading && !error && orders){
+      const deliveredOrders = orders.filter((order)=> order.isDelivered);
+      setDelivered(deliveredOrders);
+    }
+  },[isLoading,error,orders]);
+  console.log(delivered);
+  console.log(pending);
+  
   return (
     <>
       <h1>Orders</h1>
