@@ -34,7 +34,7 @@ const createProduct = asyncHandler(async(req,res) =>{
         numReviews: 0,
         description: 'sample description',
     })
-    const createProduct = await product.save();
+    const createdProduct = await product.save();
     res.status(201).json(createdProduct);
 });
 
